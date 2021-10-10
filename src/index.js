@@ -2,7 +2,6 @@ import AjaxClient from './ajaxClient';
 import ApiClient from './apiClient';
 import WebStoreClient from './webstoreClient';
 import AgentCategories from './api/agentCategories';
-import AgentPrices from './api/agentPrices';
 import AgentTags from './api/agentTags';
 import AgentAttributes from './api/agentAttributes';
 import Agents from './api/agents/agents';
@@ -12,7 +11,6 @@ import AgentVariants from './api/agents/variants';
 import AgentImages from './api/agents/images';
 
 import AjaxAgentCategories from './api/ajaxAgentCategories';
-import AjaxAgentPrices from './api/ajaxAgentPrices';
 import AjaxAgentTags from './api/ajaxAgentTags';
 import AjaxAgentAttributes from './api/ajaxAgentAttributes';
 import AjaxAgents from './api/ajaxAgents/agents';
@@ -68,7 +66,6 @@ export default class Client {
 		this.agents.options.values = new AgentOptionValues(apiClient);
 		this.agents.variants = new AgentVariants(apiClient);
 		this.agents.images = new AgentImages(apiClient);
-		this.agentPrices = new AgentPrices(apiClient);
 		this.agentTags = new AgentTags(apiClient);
 		this.agentAttributes = new AgentAttributes(apiClient);
 		this.agentCategories = new AgentCategories(apiClient);
@@ -96,7 +93,6 @@ export default class Client {
 		this.ajax.customers = new AjaxCustomers(ajaxClient);
 		this.ajax.agents = new AjaxAgents(ajaxClient);
 		this.ajax.agents.images = new AjaxAgentImages(ajaxClient);
-		this.ajax.agentPrices = new AjaxAgentPrices(ajaxClient);
 		this.ajax.agentOptions = new AjaxAgentOptions(ajaxClient);
 		this.ajax.agentTags = new AjaxAgentTags(ajaxClient);
 		this.ajax.agentAttributes = new AjaxAgentAttributes(ajaxClient);
