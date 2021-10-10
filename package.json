@@ -1,0 +1,80 @@
+{
+  "name": "dlagents-client",
+  "version": "0.1.0",
+  "description": "dlagents API client library. Work on browser and server.",
+  "keywords": [
+    "dlagents",
+    "dlagents",
+    "dlagents api",
+    "dlagents ajax"
+  ],
+  "homepage": "https://dlagents.io",
+  "bugs": "https://github.com/avr248/dlagents/client/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Avr248 <avr248@gmail.com>",
+    "url": "https://github.com/avr248"
+  },
+  "contributors": [
+    {
+      "name": "Avr248 <avr248@gmail.com>",
+      "url": "https://github.com/avr248"
+    }
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avr248/dlagents/client"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "prettier": "prettier --write \"src/**/*.js\"",
+    "precommit": "lint-staged",
+    "test": "jest --coverage --runInBand --coverageDirectory=reports/coverage/",
+    "test:watch": "jest --watchAll"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "transform": {
+      "^.+\\.m?js$": "babel-jest"
+    }
+  },
+  "jest-junit": {
+    "output": "reports/junit/junit.xml",
+    "usePathForSuiteName": "true"
+  },
+  "dependencies": {
+    "cross-fetch": "^2.2.2",
+    "query-string": "^6.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.5.0",
+    "jest-junit": "^5.2.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2"
+  }
+}
